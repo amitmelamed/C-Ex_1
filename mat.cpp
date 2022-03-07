@@ -30,12 +30,29 @@ namespace ariel{
 
         }
 
+
+        
         char matrix [b][a];
             for (int i = 0; i <b ; ++i) {
                 for (int j = 0; j < a; ++j) {
                     matrix[i][j]=d;
                 }
             }
+            for (int i = 1; i <b ; i=i+2) {
+                for (int j = i; j < b-i; ++j) {
+                    matrix[j][i]=c;
+                    matrix[j][a-i-1]=c;
+                }
+            }
+            for (int i = 1; i <a ; i=i+2) {
+                for (int j = i; j < a-i; ++j) {
+                    matrix[i][j]=c;
+                    matrix[b-i-1][j]=c;
+
+                }
+            }
+
+
 
 
 
@@ -48,7 +65,10 @@ namespace ariel{
             }
         return finalstr;
     }
+
 }
+
+
 
 
 
